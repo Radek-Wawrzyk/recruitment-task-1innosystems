@@ -1,0 +1,21 @@
+.website {
+  &-header {
+    margin: 100px 0;
+    &-title {
+      font-weight: 300;
+      margin: 0;
+      b {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+//Sections
+
+.section {
+  &-header {
+    font-weight: bold;
+    padding: 50px 0;
+  }
+}

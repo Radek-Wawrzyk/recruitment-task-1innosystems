@@ -12,7 +12,7 @@
   &-footer {
     &-title {
       font-weight: 300;
-      margin: 100px 0;
+      margin: 0 0 100px 0;
       font-size: 2.5rem;
       b {
         font-weight: bold;
@@ -24,8 +24,22 @@
 //Sections
 
 .section {
+  padding: 0 0 100px;
   &-header {
     font-weight: bold;
-    padding: 50px 0;
+    padding: 0 0 50px 0;
+  }
+}
+
+//Media
+
+@media screen and (max-width: 768px) {
+  .website-header {
+    font-size: 1.8rem;
+    margin: 50px 0;
+  }
+  .website-footer-title {
+    font-size: 1.8rem;
+    margin: 0 0 50px 0;
   }
 }

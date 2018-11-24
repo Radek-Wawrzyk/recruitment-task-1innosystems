@@ -9,6 +9,16 @@
       }
     }
   }
+  &-footer {
+    &-title {
+      font-weight: 300;
+      margin: 100px 0;
+      font-size: 2.5rem;
+      b {
+        font-weight: bold;
+      }
+    }
+  }
 }
 
 //Sections

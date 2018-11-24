@@ -2,3 +2,21 @@
   border-radius: 2px;
   padding: 30px 35px
 }
+
+fieldset [role='group'] {
+  position: relative;
+  svg {
+    width: 15px;
+    height: auto;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .success svg path {
+    fill: #28a745;
+  }
+  .error svg path {
+    fill: #dc3545;
+  }
+}

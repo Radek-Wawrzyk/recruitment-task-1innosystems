@@ -5,8 +5,8 @@
       <b-row>
         <b-col md="4">
           <b-form-group >
-            <b-form-input v-model.trim="credentials.name" v-validate="'required'" :class="{'is-valid': !errors.has('name'), 'is-invalid': errors.has('name')}" name="name" type="text" required placeholder="Podaj imię"></b-form-input>
-            <span class="success" v-if="!errors.has('name')">
+            <b-form-input v-model.trim="credentials.name" v-validate="'required'" :class="{'is-valid': !errors.has('name') && name.changed, 'is-invalid': errors.has('name')}" name="name" type="text" required placeholder="Podaj imię"></b-form-input>
+            <span class="success" v-if="!errors.has('name') && name.changed">
               <svg aria-hidden="true" data-prefix="fas" data-icon="check-circle" class="svg-inline--fa fa-check-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg>
             </span>
             <span class="error" v-if="errors.has('name')">
@@ -16,8 +16,8 @@
         </b-col>
         <b-col md="4">
           <b-form-group>
-            <b-form-input v-model="credentials.surName" v-validate="'required'" :class="{'is-valid': !errors.has('surname'), 'is-invalid': errors.has('surname')}" name="surname" type="text" required placeholder="Podaj nazwisko"></b-form-input>
-            <span class="success" v-if="!errors.has('surname')">
+            <b-form-input v-model="credentials.surName" v-validate="'required'" :class="{'is-valid': !errors.has('surname') && surName.changed, 'is-invalid': errors.has('surname')}" name="surname" type="text" required placeholder="Podaj nazwisko"></b-form-input>
+            <span class="success" v-if="!errors.has('surname') && surName.changed">
               <svg aria-hidden="true" data-prefix="fas" data-icon="check-circle" class="svg-inline--fa fa-check-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg>
             </span>
             <span class="error" v-if="errors.has('surname')">
@@ -40,8 +40,8 @@
         </b-col>
         <b-col md="6">
           <b-form-group>
-            <b-form-input v-model="credentials.location" v-validate="'required'" :class="{'is-valid': !errors.has('location'), 'is-invalid': errors.has('location')}" name="location" type="text" required placeholder="Gdzie mieszkasz?"></b-form-input>
-            <span class="success" v-if="!errors.has('location')">
+            <b-form-input v-model="credentials.location" v-validate="'required'" :class="{'is-valid': !errors.has('location') && location.changed, 'is-invalid': errors.has('location')}" name="location" type="text" required placeholder="Gdzie mieszkasz?"></b-form-input>
+            <span class="success" v-if="!errors.has('location') && location.changed">
               <svg aria-hidden="true" data-prefix="fas" data-icon="check-circle" class="svg-inline--fa fa-check-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg>
             </span>
             <span class="error" v-if="errors.has('location')">
@@ -51,8 +51,8 @@
         </b-col>
         <b-col md="6">
           <b-form-group>
-            <b-form-input v-model="credentials.email" name="email" type="text" v-validate="'required|email'" :class="{'is-valid': !errors.has('email'), 'is-invalid': errors.has('email')}" required placeholder="Podaj adres e-mail"></b-form-input>
-            <span class="success" v-if="!errors.has('email')">
+            <b-form-input v-model="credentials.email" name="email" type="text" v-validate="'required|email'" :class="{'is-valid': !errors.has('email') && email.changed, 'is-invalid': errors.has('email')}" required placeholder="Podaj adres e-mail"></b-form-input>
+            <span class="success" v-if="!errors.has('email') && email.changed">
               <svg aria-hidden="true" data-prefix="fas" data-icon="check-circle" class="svg-inline--fa fa-check-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path></svg>
             </span>
             <span class="error" v-if="errors.has('email')">
@@ -70,6 +70,8 @@
 
 <script>
 
+import { mapFields } from 'vee-validate';
+
 export default {
   name: "Form",
   data: () => ({
@@ -82,6 +84,14 @@ export default {
     },
     selected: null
   }),
+  computed: {
+    ...mapFields({
+      name: 'name',
+      surName: 'surname',
+      location: 'location',
+      email: 'email'
+    })
+  },
   methods: {
     async submit() {
       const valid = await this.$validator.validateAll();
@@ -98,9 +108,10 @@ export default {
       }
     }
   },
-  created() {
+ mounted() {
 
-      this.$validator.reset();
+    console.log(this.$validator.fields)
+
   }
 }
 

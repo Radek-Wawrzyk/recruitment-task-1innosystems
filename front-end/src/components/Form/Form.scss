@@ -1,6 +1,13 @@
 .form-control {
   border-radius: 2px;
-  padding: 30px 35px
+  padding: 25px 35px;
+  height: auto;
+}
+.form-group {
+  margin-bottom: 30px;
+}
+.custom-select {
+  background: none;
 }
 
 fieldset [role='group'] {

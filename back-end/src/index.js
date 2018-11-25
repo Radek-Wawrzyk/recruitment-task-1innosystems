@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // routes config
-app.use('api/users', Users());
+app.use('/api/users', Users());
 
 // errors handling
 app.use(notFound);

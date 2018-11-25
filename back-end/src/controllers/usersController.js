@@ -7,7 +7,7 @@ export default {
     return res.status(200).send({data: user, message: `User was saved`});
   },
 
-  async findAll(req, rest, next) {
+  async findAll(req, res, next) {
     const users = await Users.find();
 
     return res.status(200).send({data: users});

@@ -28,13 +28,13 @@
         </b-col>
         <b-col md="4">
           <b-form-group>
-            <b-form-select v-model="credentials.age" id="select">
+            <b-form-select v-model="credentials.age" id="select" name="age" v-validate="'required'" :class="{'is-valid': !errors.has('age') && age.changed, 'is-invalid' : errors.has('age') }">
               <option :value="null" disabled>Ile masz lat?</option>
               <option value="0-9">0-9 lat</option>
               <option value="9-16">9-16 lat</option>
               <option value="16-21">16-21 lat</option>
             </b-form-select>
-            <span class="arrow" v-if="!errors.has('age')">
+            <span class="arrow">
               <svg aria-hidden="true" data-prefix="fas" data-icon="angle-down" class="svg-inline--fa fa-angle-down fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path></svg>
             </span>
           </b-form-group>
@@ -95,7 +95,8 @@ export default {
       name: 'name',
       surName: 'surname',
       location: 'location',
-      email: 'email'
+      email: 'email',
+      age: 'age'
     })
   },
   methods: {

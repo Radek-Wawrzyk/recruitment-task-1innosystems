@@ -53,7 +53,7 @@ $ npm run build
 Node.js and MongoDB local server is requires to run this application correctly. I tried to write back-end with Javascript ES6/ES7 newest features like Async/Await, arrow functions and etc. There is one model for database ( users model ), one controller for users, and 2 API end points ( POST & GET ). I didn't add more API end points, because they weren't necessary. However application is modular, because is based on MVC design pattern, therefore the development of application is simple and logic.
 
 | HTTP method | URI path | Description |
-| ------ | ------ | | ------ |
+| ----------- | -------- | ----------- |
 | POST | /api/users |  Add user to the database |
 | GET | /api/users |  Retrieves all users from database |
 

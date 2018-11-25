@@ -7,9 +7,11 @@ UI is based on Photoshop file which I got. Front end is based on Vue.js ( SPA ),
 ### Features
 - Responsive website
 - Reactive validation for form
-- HTTPs Request for the server by REST API endpoint
+- AJAX Https Request for the server by REST API endpoint
+- RESP API Back-End
 - Responsive slider based on dynamic data
-- Alert component which responds for the AJAX request
+- Saving data to Mongo NoSQL database on localhost server
+- Alert component which responds for the AJAX request ( success & error )
 
 ![layout of website](./img/layout.png)
 
@@ -27,7 +29,7 @@ UI is based on Photoshop file which I got. Front end is based on Vue.js ( SPA ),
   - ES6+
 
 ## Front End
-Node.js is require to run this application.
+Node.js is requires to run this application. Basically Website is based on SPA with Vue.js and Babel. App has b
 
 ### Install
 ```sh
@@ -48,9 +50,15 @@ $ npm run build
 ```
 
 ## Back End
-Node.js and MongoDB local server is require to run this application.
+Node.js and MongoDB local server is requires to run this application correctly. I tried to write back-end with Javascript ES6/ES7 newest features like Async/Await, arrow functions and etc. There is one model for database ( users model ), one controller for users, and 2 API end points ( POST & GET ). I didn't add more API end points, because they weren't necessary. However application is modular, because is based on MVC design pattern, therefore the development of application is simple and logic.
+
+| HTTP method | URI path | Description |
+| ------ | ------ | | ------ |
+| POST | /api/users |  Add user to the database |
+| GET | /api/users |  Retrieves all users from database |
 
 ### Install
+
 ```sh
 $ cd back-end
 $ npm install

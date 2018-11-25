@@ -4,7 +4,7 @@
     <carousel :perPageCustom="[[320, 1], [768, 2], [1024, 3]]" pagination-active-color="#00c352" pagination-color="#d3d3d3" :autoplay="true" :autoplayHoverPause="true">
       <slide class="item" v-for="item in items" :key="item.name">
         <img :src="item.img" :alt="item.name" class="item-img"/>
-        <h6 class="item-title">{{item.title}}</h6>
+        <h3 class="item-title">{{item.title}}</h3>
         <p class="item-description">{{item.description}}</p>
       </slide>
     </carousel>

@@ -2,6 +2,10 @@
   border-radius: 2px;
   padding: 25px 35px;
   height: auto;
+  font-size: 18px;
+  &.is-valid {
+    border-color: #00c352;
+  }
 }
 .form-group {
   margin-bottom: 30px;

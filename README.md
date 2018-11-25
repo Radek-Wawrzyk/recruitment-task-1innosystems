@@ -2,16 +2,16 @@
 Recruitment task for the [1innosystems]
 
 ### About
-UI is based on Photoshop file which I got. Front end is based on Vue.js ( SPA ), while Back end is based on Node.js with Express.js and NoSQL database MongoDB. I created REST API for communication between Front end and Back end. Aplication requires MongoDB local server. In the same moment you can run 2 applications, because CORS is setted and ports are different (8080 and 4000)
+UI is based on Photoshop file. Front end is based on Vue.js ( SPA ), while Back end is based on Node.js with Express.js and NoSQL database MongoDB with MVC design pattern. I created REST API for communication between Front end and Back end. Aplication requires MongoDB local server & Node.js. In the same moment you can run 2 applications, because CORS is set and ports are different (8080 and 4000)
 
 ### Features
 - Responsive website
 - Reactive validation for form
-- AJAX Https Request for the server by REST API endpoint
+- AJAX Http Request for the server by REST API endpoints
 - RESP API Back-End
 - Responsive slider based on dynamic data
 - Saving data to Mongo NoSQL database on localhost server
-- Alert component which responds for the AJAX request ( success & error )
+- Alert component which responds for the AJAX requests ( success & error )
 
 ![layout of website](./img/layout.png)
 
@@ -29,7 +29,7 @@ UI is based on Photoshop file which I got. Front end is based on Vue.js ( SPA ),
   - ES6+
 
 ## Front End
-Node.js is requires to run this application. Basically Website is based on SPA with Vue.js and Babel. App has b
+Node.js is requires to run this application. Basically Website is based on SPA with Vue.js. App has only the one route ('/'). I wrote dynamic form validation by Vee Validate library, Furthermore I used Axios HTTP Ajax library for API Requests. Also I decided to use Vue Carousel component for dynamic data. The whole application is responsive by Bootstrap Vue library.
 
 ### Install
 ```sh
@@ -50,7 +50,7 @@ $ npm run build
 ```
 
 ## Back End
-Node.js and MongoDB local server is requires to run this application correctly. I tried to write back-end with Javascript ES6/ES7 newest features like Async/Await, arrow functions and etc. There is one model for database ( users model ), one controller for users, and 2 API end points ( POST & GET ). I didn't add more API end points, because they weren't necessary. However application is modular, because is based on MVC design pattern, therefore the development of application is simple and logic.
+Node.js and MongoDB local server is requires to run this application correctly. I tried to write back-end with Javascript ES6/ES7 newest features like Async/Await, arrow functions and etc. There is one model for database ( users model ), one controller for users, and 2 API end points ( POST & GET ). However application is modular, because is based on MVC design pattern, therefore the development of application is simple and logic.
 
 | HTTP method | URI path | Description |
 | ----------- | -------- | ----------- |

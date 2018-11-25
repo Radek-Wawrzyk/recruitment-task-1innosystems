@@ -1,5 +1,6 @@
 <template>
   <section class="section form">
+    <Alert :alert="alert"></Alert>
     <h2 class="section-header">1. Zakoduj formularz</h2>
     <b-form @submit.prevent="submit">
       <b-row>
@@ -82,6 +83,11 @@ export default {
       age: null,
       location: '',
       email: ''
+    },
+    alert: {
+      error: false,
+      success: false,
+      message: ''
     }
   }),
   computed: {
@@ -101,8 +107,15 @@ export default {
         try {
           const data = await axios.post('http://localhost:4000/api/users/', this.credentials);
           console.log(data);
+
+          this.alert.success = true;
+          this.alert.error = false;
         } catch (err) {
           console.log(err);
+
+          this.alert.success = false;
+          this.alert.error = true;
+          this.alert.message = err;
         }
 
         //Reset Validator
@@ -112,6 +125,8 @@ export default {
         for (let key in this.credentials) {
           this.credentials[key] = '';
         }
+
+        this.credentials.age = null;
       }
     }
   }

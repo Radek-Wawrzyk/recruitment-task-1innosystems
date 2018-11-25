@@ -3,6 +3,7 @@ import { join } from 'path';
 import bodyParser from 'body-parser';
 import register from 'babel-core/register';
 import babelPolyfill from 'babel-polyfill';
+import { notFound, catchErrors } from './middlewares/errors';
 
 // Connect to database
 import dbConfig from './config/database';
@@ -25,6 +26,9 @@ app.get('/', (req, res) => {
   res.send(`I'm handsome JS developer`);
 });
 
+// errors handling
+app.use(notFound);
+app.use(catchErrors);
 
 // Start
 app.listen(4000, () => {

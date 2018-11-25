@@ -71,6 +71,7 @@
 <script>
 
 import { mapFields } from 'vee-validate';
+import axios from 'axios';
 
 export default {
   name: "Form",
@@ -81,8 +82,7 @@ export default {
       age: null,
       location: '',
       email: ''
-    },
-    selected: null
+    }
   }),
   computed: {
     ...mapFields({
@@ -96,9 +96,16 @@ export default {
     async submit() {
       const valid = await this.$validator.validateAll();
       if (valid) {
-        //call API
 
-        console.log("It works");
+        //Call API
+        try {
+          const data = await axios.post('http://localhost:4000/api/users/', this.credentials);
+          console.log(data);
+        } catch (err) {
+          console.log(err);
+        }
+
+        //Reset Validator
         this.$validator.reset();
 
         //Reset fields
@@ -107,11 +114,6 @@ export default {
         }
       }
     }
-  },
- mounted() {
-
-    console.log(this.$validator.fields)
-
   }
 }
 

@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import register from 'babel-core/register';
 import babelPolyfill from 'babel-polyfill';
 import { notFound, catchErrors } from './middlewares/errors';
+import cors from 'cors';
 import Users from './routes/users';
 
 // Connect to database
@@ -19,6 +20,7 @@ mongoose.connection.on('error', (err) => {
 
 const app = express();
 
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 

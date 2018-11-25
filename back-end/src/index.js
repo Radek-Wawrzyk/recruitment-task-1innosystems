@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import register from 'babel-core/register';
 import babelPolyfill from 'babel-polyfill';
 import { notFound, catchErrors } from './middlewares/errors';
+import Users from './routes/users';
 
 // Connect to database
 import dbConfig from './config/database';
@@ -22,9 +23,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // routes config
-app.get('/', (req, res) => {
-  res.send(`I'm handsome JS developer`);
-});
+app.use('api/users', Users());
 
 // errors handling
 app.use(notFound);
